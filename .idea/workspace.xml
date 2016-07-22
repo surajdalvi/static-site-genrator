@@ -2,54 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d6a9819-7097-4ec4-8d2a-3d0e56589e8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/assets/blt31904dd2e04aad05/download (1).jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/assets/blt31904dd2e04aad05/download (1).jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/assets/blt31904dd2e04aad05/download (1).jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/assets/blt8f6e89839219dfae/download.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/assets/blt8f6e89839219dfae/download.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/assets/blt8f6e89839219dfae/download.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/assets/blt699202cafab92bca/test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/assets/blt699202cafab92bca/test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/assets/blt699202cafab92bca/test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/assets/_assets.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/assets/_assets.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/assets/_assets.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/data/_content_types.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/data/_content_types.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/data/_content_types.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/data/_routes.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/data/_routes.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/data/_routes.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/templates/layouts/default.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/templates/partials/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/data/footer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/data/footer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/data/footer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/static-site-genrator/gulp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/templates/partials/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/data/header.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/data/header.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/data/header.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/en-us/data/home.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/ja-jp/data/home.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_content/mr-in/data/home.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/en-us/home/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/templates/pages/home/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/static-site-genrator/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/static-site-genrator/mapping.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plugins/static-site-genrator/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/public/js/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/static-site-genrator.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/basic/public/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="static-site-genrator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -192,6 +146,13 @@
       <option name="number" value="Default" />
       <updated>1469189574368</updated>
     </task>
+    <task id="LOCAL-00001" summary="Static Site Genrator">
+      <created>1469189903951</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1469189903951</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -200,6 +161,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -219,6 +181,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Static Site Genrator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Static Site Genrator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
