@@ -8,9 +8,11 @@
  * Module dependencies
  */
 var contentstack =  require('contentstack-express'),
+   stack = contentstack.Stack(),
     path = require('path'),
     fs = require('fs'),
     Q = require('q'),
+    request = require('request'),
     gulp = require('gulp'),
     async = require('async');
 
@@ -18,8 +20,9 @@ var gulptask = require("./gulp.js");
 var config = contentstack.config,
     environment = config._config.environment,
     temppath = config._config.path.templates,
+    stroagepath=config._config.path.storage,
     basePath = config._config.path.base;
-console.log(temppath)
+
 module.exports = function StaticSiteGenrator() {
     var options = StaticSiteGenrator.options;
     var expressApp;
@@ -51,12 +54,117 @@ module.exports = function StaticSiteGenrator() {
 
     //plugin start here
     StaticSiteGenrator.templateExtends = function(engine,app) {
-        gulptask.restartAPP(app,temppath,staticFolderPath,staticFolderName)
+  //this task run after every restart
+        gulp.task('restart', function () {
+            if (fs.existsSync(stroagepath)) {
+                var directories = fs.readdirSync(stroagepath);
+                var alldirectories = directories.map(function (directory, instanceIndex) {
+                    var deferred = Q.defer();
+                    if(fs.existsSync(path.join(stroagepath,directory,"data","_routes.json"))){
+                        var filedata=JSON.parse(fs.readFileSync(path.join(stroagepath,directory,"data","_routes.json")))
+                       var allfildedata=filedata.map(function (data, instanceIndex) {
+                           var deferred1 = Q.defer();
+                           var type=data["_data"]["content_type"]["uid"]
+                           var metaid=data["_data"]["entry"]["uid"]
+                           var queryparameter = {};
+                           queryparameter["environment"] = environment
+                           queryparameter["locale"] = directory
+                           queryparameter["query"] = {"_metadata.uid": {$in: [metaid]}}
+                           request.get({
+                               uri: "https://api.contentstack.io/v2/content_types/"+type+"/entries",
+                               qs: queryparameter,
+                               headers: {
+                                   "site_api_key": "blt9057f905ce2b2414",
+                                   "access_token": "blt9948bd9cf14932a044e3173e"
+                               }
+                           }, function (error, respnse, body) {
+                                if(error){
+                                    console.log("Something wrong happen",error)
+                                    deferred1.resolve();
+                                }else{
+                                    body = JSON.parse(body)
+                                    body=body.entries;
+                                    body=body[0]
+                                    var mainurl=body.url;
+                                    if(mainurl=="/")
+                                        mainurl="/home"
+                                    var temp=path.join(temppath,"pages",type,"index.html")
+                                    expressApp.render(temp, {entry: body}, function (err, html) {
+                                        if(err){
+                                            console.log("render Error::::",err)
+                                            deferred1.resolve();
+                                        }else{
+                                            var url = mainurl.split("/");
+                                            if (!fs.existsSync(path.join(staticFolderPath, staticFolderName)))
+                                                fs.mkdirSync(path.join(staticFolderPath, staticFolderName));
+                                            if (!fs.existsSync(path.join(staticFolderPath, staticFolderName, directory)))
+                                                fs.mkdirSync(path.join(staticFolderPath, staticFolderName, directory));
+                                            if (url.length == 2) {
+                                                if (!fs.existsSync(path.join(staticFolderPath, staticFolderName, directory, url[1])))
+                                                    fs.mkdirSync(path.join(staticFolderPath, staticFolderName, directory, url[1]));
+                                                fs.writeFileSync(path.join(staticFolderPath, staticFolderName, directory, url[1], 'index.html'), html, "utf-8");
+                                                console.log("Static File Created Sucessfully");
+                                                async.series([
+                                                    function (callback) {
+                                                        createMapping(type,directory+mainurl, callback)
+                                                    }
+                                                ], function (err, results) {
+                                                    deferred1.resolve();
+                                                });
+                                            }
+                                            else{
+                                                var mainpath = path.join(staticFolderPath, staticFolderName, directory);
+                                                url.splice(0, 1);
+                                                var folders = url.map(function (folderName, instanceIndex) {
+                                                    var deferred2 = Q.defer();
+                                                    mainpath = path.join(mainpath, folderName);
+                                                    if (!fs.existsSync(mainpath))
+                                                        fs.mkdirSync(mainpath);
+                                                    deferred2.resolve();
+                                                    return deferred2.promise
+                                                })
+                                                return Q.all(folders)
+                                                    .then(function () {
+                                                        console.log("Static File Created Sucessfully");
+                                                        fs.writeFileSync(path.join(mainpath, 'index.html'), html, "utf-8");
+                                                        async.series([
+                                                            function (callback) {
+                                                                createMapping(type,directory+mainurl, callback)
+                                                            }
+                                                        ], function (err, results) {
+                                                            deferred1.resolve();
+                                                        });
+                                                    })
+                                            }
+                                        }
+                                    })
+
+                                }
+                           })
+                           return deferred1.promise
+                       })
+                        return Q.all(allfildedata)
+                            .then(function () {
+                                deferred.resolve();
+                            })
+                    }else{
+                        deferred.resolve();
+                    }
+                    return deferred.promise
+                })
+                return Q.all(alldirectories)
+                    .then(function () {
+                       console.log("All Directory is over---------------------------------------")
+                    })
+            }
+
+        })
+        gulp.start('restart');
+
    };
 
    StaticSiteGenrator.serverExtends = function(app) {
        expressApp = app;
-       //gulptask.restartAPP(app,temppath,staticFolderPath,staticFolderName)
        var locals = config._config.languages;
        var alllocals = locals.map(function (locale, instanceIndex) {
            app.use(locale.relative_url_prefix, contentstack.static(path.join(staticFolderPath, staticFolderName, locale.code, 'home'), {
@@ -153,7 +261,7 @@ module.exports = function StaticSiteGenrator() {
        }
    };
 
-
+ //This function is only for matain the records of all urls
   function createMapping(content_type_uid,pageURL,callback){
       try {
           var mapping = JSON.parse(fs.readFileSync(path.join(__dirname, 'mapping.json'), 'utf8'));
@@ -188,6 +296,7 @@ module.exports = function StaticSiteGenrator() {
       }
 
   }
+
    StaticSiteGenrator.beforeUnpublish = function (data, next) {
        if(data.content_type){
            if (data.content_type.options.is_page) {

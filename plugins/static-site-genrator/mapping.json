@@ -3,5 +3,10 @@
         "en-us/home",
         "ja-jp/home",
         "mr-in/home"
+    ],
+    "test": [
+        "en-us/hello-world",
+        "en-us/demo",
+        "mr-in/demo"
     ]
 }

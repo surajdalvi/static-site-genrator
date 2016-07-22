@@ -50,21 +50,7 @@ exports.fileChanges = function(staticFolderPath,staticFolderName,temppath) {
     gulp.start('default');
 };
 
-exports.restartAPP = function(app,temppath,staticFolderPath, staticFolderName) {
-    gulp.task('restart', function () {
-        var tempalte1=path.join(temppath,"pages","home","index.html")
-        var content1={"updated_at":"2016-07-22T07:11:04.858Z","created_at":"2016-07-22T07:11:04.791Z","title":"Home page","url":"/home","rich_text_editor":"<p>Suraj Dalvi</p>","group":[{"file":[{"uid":"blt31904dd2e04aad05","created_at":"2016-07-22T07:10:44.624Z","updated_at":"2016-07-22T07:10:44.624Z","created_by":"sys_bltd0f5afe859218f50","updated_by":"sys_bltd0f5afe859218f50","content_type":"image/jpeg","file_size":"13046","tags":[],"filename":"download (1).jpg","url":"https://api.contentstack.io/v2/assets/5791c6f46ba42bdd1d09d32a/download?uid=blt31904dd2e04aad05","_internal_url":"/assets/blt31904dd2e04aad05/download (1).jpg"}]},{"file":[{"uid":"blt699202cafab92bca","created_at":"2016-07-22T07:10:50.281Z","updated_at":"2016-07-22T07:10:50.281Z","created_by":"sys_bltd0f5afe859218f50","updated_by":"sys_bltd0f5afe859218f50","content_type":"image/jpeg","file_size":"7687","tags":[],"filename":"test.jpg","url":"https://api.contentstack.io/v2/assets/5791c6fa7be2f1ca1f3812f9/download?uid=blt699202cafab92bca","_internal_url":"/assets/blt699202cafab92bca/test.jpg"}]},{"file":[{"uid":"blt8f6e89839219dfae","created_at":"2016-07-22T07:10:55.525Z","updated_at":"2016-07-22T07:10:55.525Z","created_by":"sys_bltd0f5afe859218f50","updated_by":"sys_bltd0f5afe859218f50","content_type":"image/jpeg","file_size":"9451","tags":[],"filename":"download.jpg","url":"https://api.contentstack.io/v2/assets/5791c6ff3e2771e3206ade36/download?uid=blt8f6e89839219dfae","_internal_url":"/assets/blt8f6e89839219dfae/download.jpg"}]}],"_metadata":{"locale":"en-us","uid":"blt5df56cc1cebcd5a0"},"tags":[],"updated_by":"sys_bltd0f5afe859218f50","created_by":"sys_bltd0f5afe859218f50","uid":"blt5df56cc1cebcd5a0","_version":1,"published_at":"2016-07-22T09:14:27.602Z"}
-        app.render(tempalte1, {entry: content1}, function (err, html) {
-            if(err){
-                console.log("error:::",err)
-            }else{
-                console.log("sucess:::",html)
-                fs.writeFileSync(path.join(staticFolderPath, staticFolderName,'index.html'), html, "utf-8");
-            }
-        })
-    })
-    gulp.start('restart');
-}
+
 
 var deleteFolderRecursive = function (dirPath) {
     if (fs.existsSync(dirPath)) {
