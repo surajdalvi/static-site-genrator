@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d6a9819-7097-4ec4-8d2a-3d0e56589e8d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\.name" afterPath="" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\static-site-genrator.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\side genrator\Git Staic Site Genrator\static-site-genrator\.idea\workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="static-site-genrator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +28,28 @@
     <favorites_list name="static-site-genrator" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.11915888">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
@@ -163,7 +187,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469190344890</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Static Site Genrator">
+      <created>1469190432566</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1469190432566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -214,6 +244,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11915888">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
           <folding />
         </state>
       </provider>
