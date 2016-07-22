@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<section>
+	<h1>{{entry.title}}</h1>
+
+	<ul>
+		<li><b>Title:</b> {{entry.title}}</li>
+		<li><b>URL:</b> {{entry.url}}</li>
+		<li><b>Rich text editor:</b> {{entry.rich_text_editor}}</li>
+		<li><b>Group:</b>
+			{% set entry_group = entry.group %}
+			<ul>
+				{% for _entry_group in entry_group -%}
+				<li><b>{{loop.index}}</b>:<br>
+					<ul>
+						<li><b>File:</b>
+							{% set _entry_group_file = _entry_group.file %}
+							<ul>
+								{% for __entry_group_file in _entry_group_file -%}
+								<li><a href='{{getAssetUrl(__entry_group_file)}}'>{{__entry_group_file.filename}}</a></li>
+								{%- endfor %}
+							</ul>
+						</li>
+					</ul>
+				</li>
+				{%- endfor %}
+			</ul>
+		</li>
+	</ul>
+	<p style="color: #555; font-size: 14px">Note: Template automatically generated at "d:\side genrator\static-site-genrator\themes\basic\templates\pages\home\index.html"</p>
+</section>
+{% endblock %}

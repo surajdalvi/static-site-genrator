@@ -1,0 +1,11 @@
+{
+  "name": "static-site-genrator",
+  "version": "0.0.1",
+  "dependencies": {
+    "async": "^2.0.0",
+    "contentstack-express": "^1.0.0",
+    "gulp": "^3.9.1",
+    "q": "^1.4.1",
+    "request": "^2.73.0"
+  }
+}
