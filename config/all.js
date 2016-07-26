@@ -16,7 +16,8 @@ module.exports = exports = {
         }
     ],
     plugins: {
-        "static-site-genrator":{}
+        "static-site-genrator":{
+        }
     },
     contentstack: {
         api_key: "blt9057f905ce2b2414",

@@ -1,12 +1,13 @@
 {
-    "home": [
-        "en-us/home",
-        "ja-jp/home",
-        "mr-in/home"
-    ],
     "test": [
-        "en-us/hello-world",
+        "mr-in/demo",
+        "en-us/ignore",
         "en-us/demo",
-        "mr-in/demo"
+        "en-us/hello-world"
+    ],
+    "home": [
+        "ja-jp/home",
+        "mr-in/home",
+        "en-us/home"
     ]
 }
